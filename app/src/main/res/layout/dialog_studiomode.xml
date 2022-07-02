@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_splash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            card_view:cardBackgroundColor="@color/white"
+            card_view:cardCornerRadius="@dimen/_10sdp"
+            card_view:cardElevation="@dimen/_3sdp"
+            card_view:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               >
+
+                <com.naijamojiapp.app.customview.CustomFontTextView
+                    android:id="@+id/tv_title"
+                    style="@style/gray_22_m"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:text="Successfully Uploded" />
+
+
+                <com.naijamojiapp.app.customview.CustomFontTextView
+                    android:id="@+id/tv_des"
+                    style="@style/gray_16_m"
+                    android:layout_below="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:text="Please select any option" />
+
+
+
+                <RelativeLayout
+                    android:id="@+id/llShare"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/tv_des"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/login_bg"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <com.naijamojiapp.app.customview.CustomFontButton
+                        android:id="@+id/btnShare"
+                        style="@style/white_14_m"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/btn_gradiant_bg"
+                        android:gravity="center"
+                        android:text="Share" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/llSaveAndShare"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/llShare"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/login_bg"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <com.naijamojiapp.app.customview.CustomFontButton
+                        android:id="@+id/btnSaveAndShare"
+                        style="@style/white_14_m"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/btn_gradiant_bg"
+                        android:gravity="center"
+                        android:text="Save and Share" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/llCancel"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/llSaveAndShare"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:background="@color/login_bg"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <com.naijamojiapp.app.customview.CustomFontButton
+                        android:id="@+id/btnCancel"
+                        style="@style/white_14_m"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/btn_gradiant_bg"
+                        android:gravity="center"
+                        android:text="Cancel" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+
+</RelativeLayout>

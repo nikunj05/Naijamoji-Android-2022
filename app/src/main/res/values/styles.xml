@@ -1,0 +1,262 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="Base.Widget.Design.TabLayout" parent="">
+        <item name="tabBackground">@drawable/tab_selector</item>
+        <item name="tabSelectedTextColor">@color/white</item>
+        <item name="tabTextColor">@color/grey</item>
+    </style>
+
+    <style name="AppFullScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+    </style>
+
+    <style name="progress_dialog_text_style" parent="android:Theme.Holo.Light.Dialog">
+        <item name="fontType">Regular</item>
+        <item name="android:progressBarStyle">@android:style/Widget.DeviceDefault.Light.ProgressBar</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">@dimen/_15sdp</item>
+    </style>
+
+    <style name="MineCustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/_15sdp</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="EditText">
+        <item name="android:singleLine">true</item>
+        <item name="colorControlNormal">#FFFFFF</item>
+        <item name="colorControlActivated">#FFFFFF</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="colorControlHighlight_blue">
+        <item name="colorControlHighlight">@color/grey_light</item>
+    </style>
+    <style name="StyleableDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:fitsSystemWindows">true</item>
+
+    </style>
+
+    <style name="ProgressBarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorAccent">@color/blue_new</item>
+    </style>
+
+    <!--TextTheme-->
+    <style name="LoginBoldPrimary">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+    </style>
+
+    <style name="white_14_m">
+        <item name="fontType">Medium</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+    </style>
+
+    <style name="white_16_m">
+        <item name="fontType">Medium</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/_16sdp</item>
+    </style>
+
+    <style name="blue_14_r">
+        <item name="fontType">Regular</item>
+        <item name="android:textColor">@color/blue_new</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+    </style>
+
+    <style name="blue_14_m">
+        <item name="fontType">Medium</item>
+        <item name="android:textColor">@color/blue_new</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+    </style>
+
+    <style name="blue_20_m">
+        <item name="fontType">Medium</item>
+        <item name="android:textColor">@color/blue_new</item>
+        <item name="android:textSize">@dimen/_20sdp</item>
+    </style>
+
+    <style name="blue_12_r">
+        <item name="fontType">Regular</item>
+        <item name="android:textColor">@color/blue_new</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+    </style>
+
+    <style name="gray_14_m">
+        <item name="fontType">Medium</item>
+        <item name="android:textColor">@color/light_black</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+    </style>
+
+    <style name="graynew_14_r">
+        <item name="fontType">Regular</item>
+        <item name="android:textColor">@color/gray_new</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+    </style>
+
+    <style name="graynew_12_r">
+        <item name="fontType">Regular</item>
+        <item name="android:textColor">@color/gray_new</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+    </style>
+
+
+    <style name="graynew_11_r">
+        <item name="fontType">Regular</item>
+        <item name="android:textColor">@color/gray_new</item>
+        <item name="android:textSize">@dimen/_11sdp</item>
+    </style>
+
+    <style name="black_14_m">
+        <item name="fontType">Medium</item>
+        <item name="android:textColor">@color/light_black</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+    </style>
+    <style name="red_14_m">
+        <item name="fontType">Medium</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+    </style>
+
+    <style name="black_14_r">
+        <item name="fontType">Regular</item>
+        <item name="android:textColor">@color/light_black</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+    </style>
+
+    <style name="black_12_m">
+        <item name="fontType">Medium</item>
+        <item name="android:textColor">@color/light_black</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+    </style>
+
+    <style name="gray_12_m">
+        <item name="fontType">Medium</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+    </style>
+
+    <style name="gray_10_m">
+        <item name="fontType">Medium</item>
+        <item name="android:textColor">@color/gray_new</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+    </style>
+
+
+    <style name="gray_18_m">
+        <item name="fontType">Medium</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">@dimen/_18sdp</item>
+    </style>
+
+    <style name="gray_22_m">
+        <item name="fontType">Medium</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">@dimen/_22sdp</item>
+    </style>
+
+    <style name="black_18_m">
+        <item name="fontType">Medium</item>
+        <item name="android:textColor">@color/light_black</item>
+        <item name="android:textSize">@dimen/_18sdp</item>
+    </style>
+
+    <style name="gray_18_b">
+        <item name="fontType">Bold</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">@dimen/_18sdp</item>
+    </style>
+
+    <style name="gray_16_m">
+        <item name="fontType">Medium</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">@dimen/_16sdp</item>
+    </style>
+
+    <style name="green_18_m">
+        <item name="fontType">Medium</item>
+        <item name="android:textColor">@color/green</item>
+        <item name="android:textSize">@dimen/_18sdp</item>
+    </style>
+
+
+    <style name="white_12_m">
+        <item name="fontType">Medium</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+    </style>
+    <style name="white_12_l">
+        <item name="fontType">Light</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+    </style>
+    <style name="white_10_b">
+        <item name="fontType">Bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+    </style>
+    <style name="white_10_r">
+        <item name="fontType">Regular</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+    </style>
+
+    <style name="black_12_l">
+        <item name="fontType">Regular</item>
+        <item name="android:textColor">@color/light_black</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+    </style>
+
+    <style name="black_11_l">
+        <item name="fontType">Regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_11sdp</item>
+    </style>
+    <style name="black_10_l">
+        <item name="fontType">Regular</item>
+        <item name="android:textColor">@color/light_black</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+    </style>
+
+    <style name="black_10_m">
+        <item name="fontType">Medium</item>
+        <item name="android:textColor">@color/light_black</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+    </style>
+
+
+    <style name="black_13_l">
+        <item name="fontType">Regular</item>
+        <item name="android:textColor">@color/light_black</item>
+        <item name="android:textSize">@dimen/_13sdp</item>
+    </style>
+
+    <style name="black_13_m">
+        <item name="fontType">Medium</item>
+        <item name="android:textColor">@color/light_black</item>
+        <item name="android:textSize">@dimen/_13sdp</item>
+    </style>
+
+</resources>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/login_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_320sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_all_screen" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/ll_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <com.naijamojiapp.app.customview.CustomFontTextView
+                    android:id="@+id/tv_recent_header"
+                    style="@style/black_14_m"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:text="@string/recent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_recent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:visibility="visible" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_recent_empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/iv_recent_empty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/tv_recent_empty"
+                        android:layout_alignBottom="@+id/tv_recent_empty"
+                        android:src="@drawable/recent_empty"
+                        android:tint="@color/red" />
+
+                    <com.naijamojiapp.app.customview.CustomFontTextView
+                        android:id="@+id/tv_recent_empty"
+                        style="@style/black_10_l"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/iv_recent_empty"
+                        android:paddingLeft="@dimen/_8sdp"
+                        android:text="@string/recent_empty"
+
+                        />
+
+                </RelativeLayout>
+
+                <com.naijamojiapp.app.customview.CustomFontTextView
+                    android:id="@+id/tv_populer_header"
+                    style="@style/black_14_m"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:text="@string/popular" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_popular"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_5sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_main_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    card_view:cardBackgroundColor="@color/white"
+                    card_view:cardCornerRadius="@dimen/_20sdp"
+                    card_view:cardElevation="@dimen/_3sdp">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/rouded_edt_border"
+
+                        >
+
+                        <com.naijamojiapp.app.customview.CustomFontEditText
+                            android:id="@+id/edt_search"
+                            style="@style/gray_12_m"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:layout_toLeftOf="@+id/iv_clear_text"
+                            android:background="@null"
+                            android:drawableLeft="@drawable/search_emoji"
+                            android:drawablePadding="@dimen/_8sdp"
+                            android:hint="@string/search_naijamoji"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:textColorHint="@color/gray_light_new"
+
+                            />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:paddingRight="@dimen/_15sdp"
+                            android:src="@drawable/search_clear_text"
+                            android:tint="@color/grey"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_search_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_8sdp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_search_search_stickers"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_search_stickers"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_8sdp" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rl_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <com.naijamojiapp.app.customview.CustomFontTextView
+            android:id="@+id/tv_error"
+            style="@style/gray_14_m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/no_data_found" />
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/pbar"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

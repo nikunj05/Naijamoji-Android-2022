@@ -1,0 +1,40 @@
+{
+  "stringTable": {},
+  "buildFiles": [
+    "/Users/himanshujadav/Documents/Projects/Naijamoji/Naijamoji/app/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/himanshujadav/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+      "-C",
+      "/Users/himanshujadav/Documents/Projects/Naijamoji/Naijamoji/app/.cxx/RelWithDebInfo/645k3j1c/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/himanshujadav/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+    "-C",
+    "/Users/himanshujadav/Documents/Projects/Naijamoji/Naijamoji/app/.cxx/RelWithDebInfo/645k3j1c/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "jni_latinime-RelWithDebInfo-x86_64": {
+      "buildCommandComponents": [
+        "/Users/himanshujadav/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/himanshujadav/Documents/Projects/Naijamoji/Naijamoji/app/.cxx/RelWithDebInfo/645k3j1c/x86_64",
+        "jni_latinime"
+      ],
+      "buildType": "debug",
+      "abi": "x86_64",
+      "artifactName": "jni_latinime",
+      "output": "/Users/himanshujadav/Documents/Projects/Naijamoji/Naijamoji/app/build/intermediates/cxx/RelWithDebInfo/645k3j1c/obj/x86_64/libjni_latinime.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {},
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

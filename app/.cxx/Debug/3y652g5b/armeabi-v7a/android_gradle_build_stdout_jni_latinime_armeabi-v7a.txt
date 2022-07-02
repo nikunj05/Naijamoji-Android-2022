@@ -1,0 +1,2 @@
+ninja: Entering directory `/Users/himanshujadav/Documents/Projects/Naijamoji/Naijamoji/app/.cxx/Debug/3y652g5b/armeabi-v7a'
+ninja: no work to do.

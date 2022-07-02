@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/login_bg"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_320sdp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:background="@drawable/bg_all_screen"/>
+
+    <RelativeLayout
+        android:id="@+id/rlMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_70sdp"
+        android:background="@drawable/tab_selector_color">
+
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            >
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/go_back_arrow_new" />
+        </RelativeLayout>
+
+
+
+        <com.naijamojiapp.app.customview.CustomFontTextView
+            style="@style/white_14_m"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/rl_back"
+            android:layout_centerHorizontal="true"
+            android:layout_alignBottom="@+id/rl_back"
+            android:gravity="center"
+            android:text="@string/studio_mode" />
+
+
+    </RelativeLayout>
+
+<!--
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        />
+-->
+
+    <ImageView
+        android:id="@+id/imgClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="8dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_close"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_280sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/rouded_edt_border"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_10sdp">
+
+        <RelativeLayout
+            android:id="@+id/rlClose"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:visibility="gone"
+            android:layout_marginRight="@dimen/_3sdp"
+            android:layout_alignParentRight="true">
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/studiomode_close_new"
+                />
+        </RelativeLayout>
+
+
+        <ja.burhanrashid52.photoeditor.PhotoEditorView
+            android:id="@+id/photoEditorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvConstraintTools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="4dp"
+        android:visibility="gone"
+        android:paddingTop="4dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rlSendStickers"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_10sdp"
+
+        >
+
+        <ImageView
+            android:id="@+id/iv_select_text"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/rounded_bg_gray"
+            android:src="@drawable/ic_text"
+            android:padding="@dimen/_5sdp"
+            android:visibility="gone"
+            android:tint="@color/blue_color_picker"
+            android:tintMode="@color/blue_color_picker"
+            android:layout_marginLeft="@dimen/_15sdp"
+            />
+
+
+        <com.naijamojiapp.app.customview.CustomFontTextView
+            android:id="@+id/tv_addtext"
+            style="@style/graynew_14_r"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_toLeftOf="@+id/imgSave"
+            android:layout_toRightOf="@+id/iv_select_text"
+            android:background="@drawable/rouded_edt_border"
+            android:gravity="center|left"
+            android:paddingLeft="@dimen/_15sdp"
+            android:text="@string/enter_text"
+            android:textColorHint="@color/gray_light_new" />
+
+        <ImageView
+            android:id="@+id/imgSave"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:src="@drawable/send_new" />
+
+
+    </RelativeLayout>
+
+
+
+    <ImageView
+        android:id="@+id/imgUndo"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:background="#99000000"
+        android:padding="8dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_undo"
+        />
+
+    <ImageView
+        android:id="@+id/imgRedo"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:background="#99000000"
+        android:padding="8dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_redo"
+         />
+
+    <ImageView
+        android:id="@+id/imgGallery"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:background="#99000000"
+        android:padding="8dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_gallery"
+        />
+
+    <ImageView
+        android:id="@+id/imgCamera"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:background="#99000000"
+        android:padding="8dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_camera"
+        />
+
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFilterView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/tool_bg"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        tools:listitem="@layout/row_filter_view" />
+
+    <TextView
+        android:id="@+id/txtCurrentTool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:singleLine="true"
+        android:text="@string/app_name"
+        android:visibility="gone"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline" />
+
+
+
+</RelativeLayout>

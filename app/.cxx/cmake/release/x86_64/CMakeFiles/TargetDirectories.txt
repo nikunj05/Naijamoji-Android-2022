@@ -1,0 +1,3 @@
+C:/Work/Android Project/Naijamoji/app/.cxx/cmake/release/x86_64/CMakeFiles/jni_latinime.dir
+C:/Work/Android Project/Naijamoji/app/.cxx/cmake/release/x86_64/CMakeFiles/edit_cache.dir
+C:/Work/Android Project/Naijamoji/app/.cxx/cmake/release/x86_64/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <LinearLayout
+            android:id="@+id/rlLight"
+            android:layout_width="wrap_content"
+            android:visibility="visible"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivLight"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:src="@color/dark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rlMedium"
+            android:layout_width="wrap_content"
+            android:visibility="visible"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivMedium"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:src="@color/medium" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rlDark"
+            android:layout_width="wrap_content"
+            android:visibility="visible"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivDark"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:src="@color/light" />
+            <!--  <ImageView
+                  android:id="@+id/ivDark"
+                  android:layout_width="@dimen/_18sdp"
+                  android:layout_height="@dimen/_18sdp"
+                  android:layout_centerInParent="true"
+                  android:layout_centerVertical="true"
+                  android:layout_marginLeft="@dimen/_20sdp"
+                  android:src="@drawable/skin_dark" />-->
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/rlGender"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:visibility="visible"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/rouded_black_border"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/ivGender"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:backgroundTint="@color/confi_round_blue"
+                    android:tint="@color/confi_round_blue"
+                    android:src="@drawable/gender_black_new" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rlStudioMode"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/rouded_black_border"
+                android:gravity="center">
+
+
+                <ImageView
+                    android:id="@+id/ivStudioMode"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:backgroundTint="@color/confi_round_blue"
+                    android:tint="@color/confi_round_blue"
+                    android:src="@drawable/studiomode_black_new" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

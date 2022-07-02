@@ -1,0 +1,42 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="bb_height">@dimen/_68sdp</dimen>
+    <dimen name="item_offset">@dimen/_2sdp</dimen>
+    <dimen name="text_12">@dimen/_12sdp</dimen>
+    <dimen name="grid_expected_size">@dimen/_100sdp</dimen>
+    <dimen name="cp_dialog_width">@dimen/_100sdp</dimen>
+    <dimen name="cp_dialog_height">@dimen/_50sdp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="editor_size">35dp</dimen>
+    <dimen name="normal_margin">8dp</dimen>
+    <dimen name="large_margin">16dp</dimen>
+    <dimen name="dialog_margin">50dp</dimen>
+
+    <dimen name="margin_0dp">0dp</dimen>
+    <dimen name="margin_1dp">1dp</dimen>
+    <dimen name="margin_2dp">2dp</dimen>
+    <dimen name="minus20">-100dp</dimen>
+    <dimen name="margin_4dp">@dimen/_4sdp</dimen>
+    <dimen name="margin_7dp">@dimen/_5sdp</dimen>
+    <dimen name="margin_8dp">@dimen/_6sdp</dimen>
+    <dimen name="margin_12dp">@dimen/_10sdp</dimen>
+    <dimen name="margin_14dp">@dimen/_12sdp</dimen>
+    <dimen name="margin_15dp">@dimen/_13sdp</dimen>
+    <dimen name="margin_17dp">@dimen/_15sdp</dimen>
+    <dimen name="margin_20dp">@dimen/_18sdp</dimen>
+    <dimen name="margin_22dp">@dimen/_20sdp</dimen>
+    <dimen name="margin_24dp">@dimen/_22sdp</dimen>
+    <dimen name="margin_26dp">@dimen/_24sdp</dimen>
+    <dimen name="margin_29dp">@dimen/_27sdp</dimen>
+    <dimen name="margin_30dp">@dimen/_28sdp</dimen>
+    <dimen name="margin_36dp">@dimen/_34sdp</dimen>
+    <dimen name="margin_50dp">@dimen/_48sdp</dimen>
+    <dimen name="margin_60dp">@dimen/_58sdp</dimen>
+    <dimen name="margin_75dp">@dimen/_73sdp</dimen>
+    <dimen name="margin_80dp">@dimen/_78sdp</dimen>
+    <dimen name="margin_90dp">@dimen/_88sdp</dimen>
+    <dimen name="margin_100dp">@dimen/_98sdp</dimen>
+    <dimen name="margin_130dp">@dimen/_128sdp</dimen>
+    <dimen name="margin_150dp">@dimen/_148sdp</dimen>
+    <dimen name="margin_200dp">@dimen/_198sdp</dimen>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="apptour">
+        <item>@drawable/imgone</item>
+        <item>@drawable/imgtwo</item>
+        <item>@drawable/imgthree</item>
+        <item>@drawable/imgfour</item>
+        <item>@drawable/imgfive</item>
+        <item>@drawable/imgsix</item>
+        <item>@drawable/imgseven</item>
+        <item>@drawable/imgeight</item>
+        <item>@drawable/imgnine</item>
+        <item>@drawable/imgten</item>
+        <item>@drawable/imgoneone</item>
+        <item>@drawable/imgonetwo</item>
+        <item>@drawable/imgonethree</item>
+        <item>@drawable/imgonefour</item>
+        <item>@drawable/imgonefive</item>
+    </array>
+
+</resources>

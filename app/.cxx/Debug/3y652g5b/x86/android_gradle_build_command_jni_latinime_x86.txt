@@ -1,0 +1,7 @@
+Executable : /Users/himanshujadav/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja
+arguments : 
+-C
+/Users/himanshujadav/Documents/Projects/Naijamoji/Naijamoji/app/.cxx/Debug/3y652g5b/x86
+jni_latinime
+jvmArgs : 
+

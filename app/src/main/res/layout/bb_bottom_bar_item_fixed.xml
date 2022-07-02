@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bb_bottom_bar_icon"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_above="@+id/bb_bottom_bar_title"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_15sdp" />
+
+    <com.naijamojiapp.app.customview.CustomFontTextView
+        android:id="@+id/bb_bottom_bar_title"
+        style="@style/black_10_m"
+        tools:text="Happy"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bb_bottom_bar_icon"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:gravity="center_horizontal" />
+</merge>

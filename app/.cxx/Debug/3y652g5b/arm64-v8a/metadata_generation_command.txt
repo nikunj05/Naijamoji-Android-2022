@@ -1,0 +1,25 @@
+                    Executable : /Users/himanshujadav/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake
+arguments : 
+-H/Users/himanshujadav/Documents/Projects/Naijamoji/Naijamoji/app
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_SYSTEM_VERSION=21
+-DANDROID_ABI=arm64-v8a
+-DCMAKE_ANDROID_ARCH_ABI=arm64-v8a
+-DANDROID_NDK=/Users/himanshujadav/Library/Android/sdk/ndk/21.3.6528147
+-DCMAKE_ANDROID_NDK=/Users/himanshujadav/Library/Android/sdk/ndk/21.3.6528147
+-DCMAKE_TOOLCHAIN_FILE=/Users/himanshujadav/Library/Android/sdk/ndk/21.3.6528147/build/cmake/android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=/Users/himanshujadav/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/himanshujadav/Documents/Projects/Naijamoji/Naijamoji/app/build/intermediates/cxx/Debug/3y652g5b/obj/arm64-v8a
+-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=/Users/himanshujadav/Documents/Projects/Naijamoji/Naijamoji/app/build/intermediates/cxx/Debug/3y652g5b/obj/arm64-v8a
+-DCMAKE_BUILD_TYPE=Debug
+-B/Users/himanshujadav/Documents/Projects/Naijamoji/Naijamoji/app/.cxx/Debug/3y652g5b/arm64-v8a
+-GNinja
+-DANDROID_STL=c++_static
+-DANDROID_PLATFORM=android-15
+-DANDROID_TOOLCHAIN=clang
+jvmArgs : 
+
+
+                    Build command args: []
+                    Version: 2

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_main"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/config_suggestions_strip_height"
+    android:animateLayoutChanges="true"
+    android:background="@color/key_background_lxx_light"
+    android:clickable="true"
+    android:visibility="visible"
+    android:layoutDirection="ltr"
+    android:paddingLeft="@dimen/_8sdp"
+    android:paddingRight="@dimen/_8sdp"
+    android:orientation="horizontal">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:animateLayoutChanges="true"
+        android:layout_height="@dimen/config_suggestions_strip_height">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCatListTab"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tab_switch_kb"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/tab_switch_kb"
+            android:layout_width="@dimen/config_suggestions_strip_height"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/search_padding"
+            android:src="@drawable/search_emoji"
+            android:tint="@color/key_text_color_lxx_light" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/tab_0"
+            android:layout_width="30dp"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/_3sdp"
+
+           />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/tab_1"
+            android:layout_width="30dp"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/_2sdp"
+
+           />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/tab_2"
+            android:layout_width="30dp"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/_2sdp"
+
+             />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/tab_3"
+            android:layout_width="30dp"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/_2sdp"
+
+            />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/tab_4"
+            android:layout_width="30dp"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/_2sdp"
+
+           />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/tab_5"
+            android:layout_width="30dp"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/tab_5"
+           />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/tab_6"
+            android:layout_width="30dp"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:padding="2dp"
+
+            />
+
+    </RelativeLayout>
+
+
+
+    <ImageView
+        android:id="@+id/tab_display_kbview"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1.0"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:tint="@color/key_background_lxx_dark"
+        android:visibility="gone" />
+
+
+</LinearLayout>

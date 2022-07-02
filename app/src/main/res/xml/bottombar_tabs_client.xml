@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab id="@+id/tab_recent"/>
+
+    <tab id="@+id/tab5" />
+
+    <tab id="@+id/tab2" />
+
+    <tab id="@+id/tab6" />
+
+    <tab id="@+id/tab4" />
+
+    <tab id="@+id/tab3" />
+
+</tabs>

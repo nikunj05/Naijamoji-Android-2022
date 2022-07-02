@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/_20sdp"
+    android:background="@drawable/rounded_white_bg"
+    android:orientation="vertical">
+
+
+    <com.naijamojiapp.app.customview.CustomFontTextView
+        android:id="@+id/tv_logout"
+        style="@style/green_18_m"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:text="@string/select_font_style" />
+     <View
+         android:id="@+id/view"
+         android:layout_width="match_parent"
+         android:layout_height="0.5dp"
+         android:background="@color/brown_color_picker"
+         android:layout_marginTop="@dimen/_10sdp"
+         android:layout_below="@+id/tv_logout"
+         />
+
+    <com.naijamojiapp.app.customview.CustomFontTextView
+        android:id="@+id/tv_font_one"
+        style="@style/gray_18_m"
+        android:layout_below="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:text="@string/style" />
+    <View
+        android:id="@+id/view_one"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/brown_color_picker"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@+id/tv_font_one"
+        />
+
+    <com.naijamojiapp.app.customview.CustomFontTextView
+        android:id="@+id/tv_font_two"
+        style="@style/gray_18_m"
+        android:layout_below="@+id/view_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:text="@string/style" />
+    <View
+        android:id="@+id/view_two"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/brown_color_picker"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@+id/tv_font_two"
+        />
+
+
+    <com.naijamojiapp.app.customview.CustomFontTextView
+    android:id="@+id/tv_font_three"
+    style="@style/gray_18_m"
+    android:layout_below="@+id/view_two"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+    android:text="@string/style" />
+    <View
+        android:id="@+id/view_three"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/brown_color_picker"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@+id/tv_font_three"
+        />
+
+    <com.naijamojiapp.app.customview.CustomFontTextView
+        android:id="@+id/tv_font_four"
+        style="@style/gray_18_m"
+        android:layout_below="@+id/view_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:text="@string/style" />
+
+
+
+
+</RelativeLayout>

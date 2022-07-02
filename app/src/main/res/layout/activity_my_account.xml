@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_splash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/login_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_320sdp"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_all_screen"/>
+
+    <RelativeLayout
+        android:id="@+id/rlMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_70sdp"
+        android:background="@drawable/tab_selector_color">
+
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/go_back_arrow_new" />
+        </RelativeLayout>
+
+
+        <com.naijamojiapp.app.customview.CustomFontTextView
+            style="@style/white_14_m"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/rl_back"
+            android:layout_alignBottom="@+id/rl_back"
+            android:gravity="center"
+            android:text="@string/account" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rlMain"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:visibility="visible"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="@dimen/_10sdp"
+                card_view:cardElevation="@dimen/_3sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rouded_cardview_border"
+                    android:orientation="vertical">
+
+                    <com.naijamojiapp.app.customview.CustomFontTextView
+                        style="@style/black_13_m"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/personal_detail" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_fname"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:background="@drawable/rouded_btn_border">
+
+
+                        <ImageView
+                            android:id="@+id/iv_fname"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:src="@drawable/firstlast_name" />
+
+
+                        <com.naijamojiapp.app.customview.CustomFontEditText
+                            android:id="@+id/edt_fname"
+                            style="@style/black_13_m"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:layout_toRightOf="@+id/iv_fname"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/edt_first_name"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:textColorHint="@color/light_black" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_lname"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:background="@drawable/rouded_btn_border">
+
+
+                        <ImageView
+                            android:id="@+id/iv_lname"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:src="@drawable/firstlast_name" />
+
+
+                        <com.naijamojiapp.app.customview.CustomFontEditText
+                            android:id="@+id/edt_lname"
+                            style="@style/black_13_m"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:layout_toRightOf="@+id/iv_lname"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/edt_last_name"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:textColorHint="@color/light_black" />
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlDob"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="@drawable/rouded_btn_border">
+
+
+                        <ImageView
+                            android:id="@+id/ivDob"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:src="@drawable/birthdate_new" />
+
+
+                        <com.naijamojiapp.app.customview.CustomFontTextView
+                            android:id="@+id/tvDob"
+                            style="@style/black_13_m"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:layout_toRightOf="@+id/ivDob"
+                            android:background="@android:color/transparent"
+                            android:gravity="center_vertical"
+                            android:hint="@string/birthdate"
+                            android:textColorHint="@color/light_black" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="@drawable/rouded_btn_border">
+
+
+                        <ImageView
+                            android:id="@+id/ivEmail"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:src="@drawable/email_new" />
+
+
+                        <com.naijamojiapp.app.customview.CustomFontTextView
+                            android:id="@+id/tvEmail"
+                            style="@style/black_13_m"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:layout_toRightOf="@+id/ivEmail"
+                            android:background="@android:color/transparent"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:hint="@string/email"
+                            android:paddingRight="@dimen/_3sdp"
+                            android:textColorHint="@color/light_black" />
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_update"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="@dimen/_30sdp"
+                        android:layout_marginRight="@dimen/_30sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="@drawable/btn_gradiant_bg"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <com.naijamojiapp.app.customview.CustomFontButton
+                            android:id="@+id/btn_update"
+                            style="@style/white_14_m"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:background="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@string/update" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:visibility="visible"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="@dimen/_10sdp"
+                card_view:cardElevation="@dimen/_3sdp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:id="@+id/rlChangePassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        >
+
+                        <ImageView
+                            android:id="@+id/ivChangePassword"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:tint="@color/light_black"
+                            android:src="@drawable/change_password_new" />
+
+                        <com.naijamojiapp.app.customview.CustomFontTextView
+                            style="@style/black_14_m"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_toRightOf="@+id/ivChangePassword"
+                            android:text="@string/change_pass" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/btn_border" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_clear_history"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        >
+
+                        <ImageView
+                            android:id="@+id/iv_clear_history"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_23sdp"
+                            android:src="@drawable/clear_history_new" />
+
+                        <com.naijamojiapp.app.customview.CustomFontTextView
+                            style="@style/black_14_m"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_13sdp"
+                            android:layout_toRightOf="@+id/iv_clear_history"
+                            android:text="@string/clear_history" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/btn_border" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/rl_delete_account"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        >
+
+                        <ImageView
+                            android:id="@+id/iv_delete_account"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:src="@drawable/delete_account_new" />
+
+                        <com.naijamojiapp.app.customview.CustomFontTextView
+                            style="@style/red_14_m"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:layout_toRightOf="@+id/iv_delete_account"
+                            android:text="@string/delete_account" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:visibility="gone"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="@dimen/_3sdp"
+                            android:background="@color/btn_border" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        android:visibility="gone"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_edit_profile"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:src="@drawable/photos" />
+
+                        <com.naijamojiapp.app.customview.CustomFontTextView
+                            style="@style/gray_14_m"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:layout_toRightOf="@+id/iv_edit_profile"
+                            android:text="@string/edit_profile" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/grey_light" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        android:visibility="gone"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_reset_avatar"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:src="@drawable/photos" />
+
+                        <com.naijamojiapp.app.customview.CustomFontTextView
+                            style="@style/gray_14_m"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:layout_toRightOf="@+id/iv_reset_avatar"
+                            android:text="@string/reset_avatar" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/btn_border" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>

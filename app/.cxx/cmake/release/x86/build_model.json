@@ -1,0 +1,74 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "C:\\Work\\Android Project\\Naijamoji",
+      "sdkFolder": "C:\\Users\\deepr\\AppData\\Local\\Android\\Sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "C:\\Work\\Android Project\\Naijamoji\\app\\build\\intermediates",
+      "gradleModulePathName": ":app",
+      "moduleRootFolder": "C:\\Work\\Android Project\\Naijamoji\\app",
+      "makeFile": "C:\\Work\\Android Project\\Naijamoji\\app\\CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "C:\\Work\\Android Project\\Naijamoji\\.cxx",
+      "cxxFolder": "C:\\Work\\Android Project\\Naijamoji\\app\\.cxx",
+      "ndkFolder": "C:\\Users\\deepr\\AppData\\Local\\Android\\Sdk\\ndk\\21.3.6528147",
+      "ndkVersion": "21.3.6528147",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [
+      "-DANDROID_STL\u003dc++_static",
+      "-DANDROID_PLATFORM\u003dandroid-15",
+      "-DANDROID_TOOLCHAIN\u003dclang"
+    ],
+    "cFlagList": [],
+    "cppFlagsList": [],
+    "variantName": "release",
+    "soFolder": "C:\\Work\\Android Project\\Naijamoji\\app\\build\\intermediates\\cmake\\release\\lib",
+    "objFolder": "C:\\Work\\Android Project\\Naijamoji\\app\\build\\intermediates\\cmake\\release\\obj",
+    "jsonFolder": "C:\\Work\\Android Project\\Naijamoji\\app\\.cxx\\cmake\\release",
+    "gradleBuildOutputFolder": "C:\\Work\\Android Project\\Naijamoji\\app\\.cxx\\cxx\\release",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "X86",
+  "abiPlatformVersion": 16,
+  "cxxBuildFolder": "C:\\Work\\Android Project\\Naijamoji\\app\\.cxx\\cmake\\release\\x86",
+  "jsonFile": "C:\\Work\\Android Project\\Naijamoji\\app\\.cxx\\cmake\\release\\x86\\android_gradle_build.json",
+  "gradleBuildOutputFolder": "C:\\Work\\Android Project\\Naijamoji\\app\\.cxx\\cxx\\release\\x86",
+  "objFolder": "C:\\Work\\Android Project\\Naijamoji\\app\\build\\intermediates\\cmake\\release\\obj\\x86",
+  "buildCommandFile": "C:\\Work\\Android Project\\Naijamoji\\app\\.cxx\\cmake\\release\\x86\\build_command.txt",
+  "buildOutputFile": "C:\\Work\\Android Project\\Naijamoji\\app\\.cxx\\cmake\\release\\x86\\build_output.txt",
+  "modelOutputFile": "C:\\Work\\Android Project\\Naijamoji\\app\\.cxx\\cmake\\release\\x86\\build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "C:\\Work\\Android Project\\Naijamoji\\app\\.cxx\\cxx\\release\\x86\\CMakeLists.txt",
+    "toolchainWrapperFile": "C:\\Work\\Android Project\\Naijamoji\\app\\.cxx\\cxx\\release\\x86\\android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "C:\\Work\\Android Project\\Naijamoji\\app\\.cxx\\cxx\\release\\x86\\build_generation_state.json",
+    "cacheKeyFile": "C:\\Work\\Android Project\\Naijamoji\\app\\.cxx\\cxx\\release\\x86\\compiler_cache_key.json",
+    "compilerCacheUseFile": "C:\\Work\\Android Project\\Naijamoji\\app\\.cxx\\cxx\\release\\x86\\compiler_cache_use.json",
+    "compilerCacheWriteFile": "C:\\Work\\Android Project\\Naijamoji\\app\\.cxx\\cxx\\release\\x86\\compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "C:\\Work\\Android Project\\Naijamoji\\app\\.cxx\\cxx\\release\\x86\\compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "C:\\Work\\Android Project\\Naijamoji\\app\\.cxx\\cmake\\release\\x86\\json_generation_record.json",
+  "compileCommandsJsonFile": "C:\\Work\\Android Project\\Naijamoji\\app\\.cxx\\cmake\\release\\x86\\compile_commands.json"
+}
