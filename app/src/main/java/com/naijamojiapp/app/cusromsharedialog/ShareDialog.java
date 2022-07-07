@@ -15,6 +15,8 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -70,6 +72,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.security.Security;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -81,6 +84,7 @@ import static android.content.Context.MODE_PRIVATE;
 import static android.content.Context.WINDOW_SERVICE;
 import static com.androidnetworking.utils.Utils.getMimeType;
 import static com.facebook.FacebookSdk.getApplicationContext;
+import static com.facebook.FacebookSdk.getCacheDir;
 
 
 public class ShareDialog extends DialogFragment implements ShareItemsAdapter.OnShareActionSelect {
@@ -124,6 +128,7 @@ public class ShareDialog extends DialogFragment implements ShareItemsAdapter.OnS
     private ProgressBar pbar;
 
     private Animation slideUpAnimation, slideDownAnimation;
+    private  Bitmap bitmap;
 
     /**
      * Create new instance of {@link ShareDialog} with custom type
@@ -361,7 +366,13 @@ public class ShareDialog extends DialogFragment implements ShareItemsAdapter.OnS
         rlSaveMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DownloadTask().execute(stringToURL(mImage));
+                if(stringToURL(mImage).toString().startsWith("https")){
+                    new DownloadTask().execute(stringToURL(mImage));
+                }else {
+                    Toast.makeText(getApplicationContext(), "Save Successfully..", Toast.LENGTH_SHORT).show();
+                    saveImageToInternalStorage(bitmap);
+                }
+
             }
         });
 
@@ -378,19 +389,19 @@ public class ShareDialog extends DialogFragment implements ShareItemsAdapter.OnS
 
         protected Bitmap doInBackground(URL... urls) {
             URL url = urls[0];
-            HttpURLConnection connection = null;
-            try {
-                connection = (HttpURLConnection) url.openConnection();
-                connection.connect();
-                InputStream inputStream = connection.getInputStream();
-                BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
-                Bitmap bmp = BitmapFactory.decodeStream(bufferedInputStream);
-                return bmp;
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                connection.disconnect();
-            }
+                HttpURLConnection connection = null;
+                try {
+                    connection = (HttpURLConnection) url.openConnection();
+                    connection.connect();
+                    InputStream inputStream = connection.getInputStream();
+                    BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
+                    Bitmap bmp = BitmapFactory.decodeStream(bufferedInputStream);
+                    return bmp;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                    connection.disconnect();
+                }
             return null;
         }
 
@@ -421,8 +432,8 @@ public class ShareDialog extends DialogFragment implements ShareItemsAdapter.OnS
     // Custom method to save a bitmap into internal storage
     protected Uri saveImageToInternalStorage(Bitmap bitmap) {
         try {
-            //String root = Environment.getExternalStorageDirectory().toString();
-            File myDir = new File(getActivity().getFilesDir() + "/Naijamoji");
+            String root = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString();
+            File myDir = new File(root + "/Naijamoji");
             if (!myDir.exists()) {
                 myDir.mkdirs();
             }
@@ -620,24 +631,18 @@ public class ShareDialog extends DialogFragment implements ShareItemsAdapter.OnS
                     intent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, uriValues);
                     intent.setAction(intentAction);
                 } else {
-                  /*  Uri fileUri = Uri.parse(shareTextContent);
-                    intent.putExtra(Intent.EXTRA_STREAM, fileUri);
-                    intent.setAction(intentAction);*/
-
-
-
-                    File cacheFile = new File(getActivity().getExternalCacheDir(), "share.png");
-                    Log.d("Print file path","===>"+cacheFile.getPath());
-                  //  Uri uri = Uri.fromFile(cacheFile);
-                    Uri uri = FileProvider.getUriForFile(getActivity(), "com.naijamojiapp.provider", cacheFile);
-                    intent.putExtra(Intent.EXTRA_STREAM, uri);
-                    intent.setAction(intentAction);
-
+                    String bitmapPath = MediaStore.Images.Media.insertImage(getActivity().getContentResolver(), bitmap,"title", null);
+                    Uri bitmapUri = Uri.parse(bitmapPath);
+                    Log.e("Print bitmapUri ","===>"+bitmapUri);
+                    intent.setType("image/png");
+                    intent.putExtra(Intent.EXTRA_STREAM, bitmapUri);
                 }
                 intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 getActivity().startActivity(intent);
                 break;
         }
+
+
     } public File readContentToFile(String localPath) throws IOException {
         File readFile = new File(localPath);
 
@@ -653,7 +658,44 @@ public class ShareDialog extends DialogFragment implements ShareItemsAdapter.OnS
         }
         return readFile;
     }
+    private void shareImageandText(Bitmap bitmap) {
+        Uri uri = getmageToShare(bitmap);
+        Intent intent = new Intent(Intent.ACTION_SEND);
 
+        // putting uri of image to be shared
+        intent.putExtra(Intent.EXTRA_STREAM, uri);
+
+        // adding text to share
+       // intent.putExtra(Intent.EXTRA_TEXT, "Sharing Image");
+
+        // Add subject Here
+       // intent.putExtra(Intent.EXTRA_SUBJECT, "Subject Here");
+
+        // setting type to image
+        intent.setType("image/png");
+
+        // calling startactivity() to share
+        startActivity(intent);
+    }
+
+    // Retrieving the url to share
+    private Uri getmageToShare(Bitmap bitmap) {
+        File imagefolder = new File(getCacheDir(), "images");
+        Uri uri = null;
+        try {
+            imagefolder.mkdirs();
+            File file = new File(imagefolder, "shared_image.png");
+            FileOutputStream outputStream = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 90, outputStream);
+            outputStream.flush();
+            outputStream.close();
+            uri = FileProvider.getUriForFile(getActivity(), "com.naijamojiapp.fileprovider", file);
+            Log.e("print uri","===>"+uri);
+        } catch (Exception e) {
+            Toast.makeText(getActivity(), "" + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+        return uri;
+    }
     private ArrayList<Uri> parseStringsToUri(ArrayList<String> values) {
         ArrayList<Uri> uris = new ArrayList<>();
         for (String fileAddress : values) {
@@ -686,6 +728,14 @@ public class ShareDialog extends DialogFragment implements ShareItemsAdapter.OnS
     public void setShareContent(String shareTextContent, String image) {
         this.shareTextContent = shareTextContent;
         this.mImage = image;
+        Log.e("Print image","===>");
+    }
+
+    public void setShareContent(String shareTextContent,String image, Bitmap bitmap) {
+        this.shareTextContent = shareTextContent;
+        this.bitmap = bitmap;
+        this.mImage = image;
+        Log.e("Print bitmap","===>"+this.bitmap.getAllocationByteCount());
     }
 
     /**

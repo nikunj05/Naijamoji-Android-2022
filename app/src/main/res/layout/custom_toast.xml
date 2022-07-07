@@ -16,7 +16,7 @@
             android:layout_height="@dimen/_30sdp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/_10sdp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/new_logo" />
 
         <LinearLayout
             android:layout_width="match_parent"

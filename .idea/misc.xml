@@ -20,6 +20,7 @@
         <entry key="app/src/main/res/layout/add_text_dialog.xml" value="0.15625" />
         <entry key="app/src/main/res/layout/bottom_signup_dialog.xml" value="0.1796875" />
         <entry key="app/src/main/res/layout/color_picker_item_list.xml" value="0.75" />
+        <entry key="app/src/main/res/layout/custom_toast.xml" value="0.1" />
         <entry key="app/src/main/res/layout/dialog_enter_mail.xml" value="0.335" />
         <entry key="app/src/main/res/layout/dialog_share.xml" value="0.15625" />
         <entry key="app/src/main/res/layout/dialog_studiomode.xml" value="0.12291666666666666" />

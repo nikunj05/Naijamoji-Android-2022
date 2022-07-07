@@ -39,7 +39,8 @@
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FLAG_GRANT_READ_URI_PERMISSION" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
@@ -96,12 +97,12 @@
         </provider>
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.naijamojiapp.provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
+            android:authorities="com.naijamojiapp.fileprovider"
+            android:grantUriPermissions="true"
+            android:exported="false">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/fileprovider" />
+                android:resource="@xml/filepaths" />
         </provider>
 
 

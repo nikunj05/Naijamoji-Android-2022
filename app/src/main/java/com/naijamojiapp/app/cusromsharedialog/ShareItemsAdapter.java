@@ -75,7 +75,6 @@ public class ShareItemsAdapter extends RecyclerView.Adapter<ShareItemsAdapter.Sh
 
     @Override
     public int getItemCount() {
-        Log.e("Print item size","==>"+items.size());
         return items.size();
     }
 

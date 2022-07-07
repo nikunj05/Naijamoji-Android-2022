@@ -688,7 +688,7 @@ public class StudioModeActivity extends BaseActivity implements OnPhotoEditorLis
             builder.setType(ShareDialog.TYPE_IMAGE);
             builder.showAsList(true);
             shareDialog = builder.build();
-            shareDialog.setShareContent(Uri.fromFile(file).toString(), String.valueOf(image));
+            shareDialog.setShareContent(Uri.fromFile(file).toString(), String.valueOf(image),bitmap);
             shareDialog.show(this.getSupportFragmentManager());
             Log.i("Unique","4");
         } catch (Exception e) {
