@@ -35,6 +35,7 @@ import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
 import com.naijamojiapp.R;
 import com.naijamojiapp.app.customview.CustomDialog;
 import com.naijamojiapp.app.utils.Preferences;
@@ -65,7 +66,7 @@ public class TextEditorDialogFragment extends DialogFragment {
     private ImageView ivSelectText;
     Typeface typeFace;
     private String mFontType = "";
-    private int mTextCount = Integer.parseInt(Preferences.Companion.getINSTANCE().getCharacterLimit());
+    //private int mTextCount = Integer.parseInt(Preferences.Companion.getINSTANCE().getCharacterLimit());
     //    private int mTextCount = 15;
     private Boolean ignoreChange = false;
 
@@ -122,11 +123,11 @@ public class TextEditorDialogFragment extends DialogFragment {
 
         mAddTextEditText = view.findViewById(R.id.add_text_edit_text);
         mAddTextEditText.setSelection(mAddTextEditText.getText().length());
-        mAddTextEditText.setFilters(new InputFilter[] {new InputFilter.LengthFilter(mTextCount)});
+        //mAddTextEditText.setFilters(new InputFilter[] {new InputFilter.LengthFilter(mTextCount)});
 //        mAddTextEditText.setFilters(new InputFilter[]{EMOJI_FILTER});
 
         tvCount = view.findViewById(R.id.tvCount);
-        tvCount.setText("" + Integer.parseInt(Preferences.Companion.getINSTANCE().getCharacterLimit()));
+       // tvCount.setText("" + Integer.parseInt(Preferences.Companion.getINSTANCE().getCharacterLimit()));
 
 
         Thread workerThread = new Thread() {
@@ -140,19 +141,24 @@ public class TextEditorDialogFragment extends DialogFragment {
                         try {
                             if (!ignoreChange) {
                                 ignoreChange = true;
-                                if (s.length() > (Integer.parseInt(Preferences.Companion.getINSTANCE().getCharacterLimit()))) { }else{
-                                    Log.i("textlimit","yes11==="+s.length());
+                                mAddTextEditText.setText(fontcolor(s.toString()), TextView.BufferType.SPANNABLE);
+                                mAddTextEditText.setSelection(mAddTextEditText.getText().length());
+
+                               /* if (s.length() > (Integer.parseInt(Preferences.Companion.getINSTANCE().getCharacterLimit()))) { }else{
+                                    Log.i("textlimit","yes11==="+s.length()+"===>"+Integer.parseInt(Preferences.Companion.getINSTANCE().getCharacterLimit()));
                                     mAddTextEditText.setText(fontcolor(s.toString()), TextView.BufferType.SPANNABLE);
                                     mAddTextEditText.setSelection(mAddTextEditText.getText().length());
-                                }
+                                }*/
                             }
-                            if (s.length() > (Integer.parseInt(Preferences.Companion.getINSTANCE().getCharacterLimit()))) {} else {
-                                Log.i("textlimit","no=="+s.length());
+                           /* if (s.length() > (Integer.parseInt(Preferences.Companion.getINSTANCE().getCharacterLimit()))) {} else {
+                                Log.i("textlimit","no=="+s.length() +"===>"+Integer.parseInt(Preferences.Companion.getINSTANCE().getCharacterLimit()));
                                 mTextCount = Integer.parseInt(Preferences.Companion.getINSTANCE().getCharacterLimit()) - s.length();
                                 tvCount.setText("" + mTextCount);
                                 //Preferences.Companion.getINSTANCE().SavePrefValue(Preferences.Companion.getINSTANCE().getCharacterLimit(),String.valueOf(mTextCount));
-                            }
-                        }catch (Exception e){}
+                            }*/
+                        }catch (Exception e){
+
+                        }
 
                     }
                     @Override
@@ -248,20 +254,22 @@ public class TextEditorDialogFragment extends DialogFragment {
     };
 
     private Spannable fontcolor(final String text) {
-        //   int[] colors = new int[]{Color.RED, 0xFFFF9933, Color.YELLOW, Color.GREEN, Color.BLUE, Color.RED, 0xFFFF9933, Color.YELLOW, Color.GREEN, Color.BLUE, Color.RED, 0xFFFF9933, Color.YELLOW, Color.GREEN, Color.BLUE, Color.RED, 0xFFFF9933, Color.YELLOW, Color.GREEN, Color.BLUE};
         int[] androidColors = getResources().getIntArray(R.array.androidcolors);
-        //  mColorCode = androidColors[new Random().nextInt(androidColors.length)];
         Spannable word = new SpannableString(text);
-        try {
-            for (int i = 0; i < word.length(); i++) {
-                word.setSpan(new ForegroundColorSpan(androidColors[i]), i, i + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                Log.i("colorCodes" + "===>", word.toString() + "===========" + i + "========" + mColorCode);
+        if(Preferences.Companion.getINSTANCE().getGetFontMode().equals("0")){
+            try {
+                for (int i = 0; i < word.length(); i++) {
+                    word.setSpan(new ForegroundColorSpan(androidColors[new Random().nextInt(androidColors.length)]), i, i + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    Log.i("colorCodes" + "===>", word.toString() + "===========" + i + "========" + new Gson().toJson(androidColors[new Random().nextInt(androidColors.length)]));
+                }
+                return word;
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            return word;
-        } catch (Exception e) {
         }
-        return null;
+        return word;
     }
+
 
   /*  private Spannable buildRainbowText(String pack_name) {
         int[] colors = new int[]{Color.RED, 0xFFFF9933, Color.YELLOW, Color.GREEN, Color.BLUE, Color.RED, 0xFFFF9933, Color.YELLOW, Color.GREEN, Color.BLUE, Color.RED, 0xFFFF9933, Color.YELLOW, Color.GREEN, Color.BLUE, Color.RED, 0xFFFF9933, Color.YELLOW, Color.GREEN, Color.BLUE};

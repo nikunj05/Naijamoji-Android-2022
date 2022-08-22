@@ -31,37 +31,43 @@
         android:layout_height="@dimen/_30sdp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/_17sdp"
+        android:visibility="gone"
         android:background="@drawable/rounded_border_text_view"
         >
+
         <TextView
             android:id="@+id/tvCount"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
-            android:textAllCaps="false"
-            tools:text="15"
-            android:textStyle="bold"
             android:gravity="center"
+            android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:text="15" />
     </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_above="@+id/add_text_color_picker_relative_layout"
-        android:layout_below="@+id/add_text_done_tv"
-        android:layout_height="match_parent">
+        android:layout_below="@+id/add_text_done_tv">
 
         <EditText
             android:id="@+id/add_text_edit_text"
             style="@style/EditText"
-            android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-             android:layout_gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
             android:background="@null"
-            android:gravity="center_horizontal"
-            android:maxLength="6"
+            android:gravity="top|center"
             android:hint="Tap"
+            android:imeOptions="actionDone"
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:scrollbars="vertical"
             android:textColorHint="@color/white"
             android:textSize="40sp" />
     </ScrollView>

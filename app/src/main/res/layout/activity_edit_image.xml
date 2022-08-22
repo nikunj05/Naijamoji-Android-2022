@@ -28,8 +28,7 @@
             android:gravity="center"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="@dimen/_6sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
-            >
+            android:layout_marginLeft="@dimen/_10sdp">
 
             <ImageView
                 android:id="@+id/iv_back"
@@ -40,14 +39,13 @@
         </RelativeLayout>
 
 
-
         <com.naijamojiapp.app.customview.CustomFontTextView
             style="@style/white_14_m"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignTop="@+id/rl_back"
-            android:layout_centerHorizontal="true"
             android:layout_alignBottom="@+id/rl_back"
+            android:layout_centerHorizontal="true"
             android:gravity="center"
             android:text="@string/studio_mode" />
 
@@ -76,9 +74,35 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/rl_containerView">
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_font_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:checked="true"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/tvFontMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/switch_font_mode"
+            android:text="@string/enable_black_mode"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:fontFamily="@font/quicksandmedium"/>
+    </RelativeLayout>
 
 
     <RelativeLayout
+        android:id="@+id/rl_containerView"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_280sdp"
         android:layout_marginTop="@dimen/_10sdp"
@@ -110,7 +134,7 @@
         <ja.burhanrashid52.photoeditor.PhotoEditorView
             android:id="@+id/photoEditorView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
     </RelativeLayout>
 

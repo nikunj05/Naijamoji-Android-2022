@@ -25,6 +25,7 @@ import com.naijamojiapp.app.Naijamoji
      val PREF_CAT_TIMESTAMP = "pref_cat_timestamp"
      val PREF_AllSTICKERS_TIMESTAMP = "pref_allstickers_timestamp"
      val PREF_TAG_TIMESTAMP = "pref_tag_timestamp"
+     val PREF_FONT_MODE = "pref_font_mode"
 
 
 
@@ -61,6 +62,9 @@ import com.naijamojiapp.app.Naijamoji
 
      val getSkinTone: String
          get() = INSTANCE?.mPrefs!!.getString(PREF_USER_SKINTONE, "")!!
+
+     val getFontMode :String
+     get() = INSTANCE?.mPrefs!!.getString(PREF_FONT_MODE,"0")!!
 
      //Timestamp Local
      val getCatTimeStamp: String

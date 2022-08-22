@@ -24,7 +24,7 @@ class MultiTouchListener implements OnTouchListener {
     private boolean isRotateEnabled = true;
     private boolean isTranslateEnabled = true;
     private boolean isScaleEnabled = true;
-    private float minimumScale = 2.5f;
+    private float minimumScale = 0.5f;
     private float maximumScale = 10.0f;
     private int mActivePointerId = INVALID_POINTER_ID;
     private float mPrevX, mPrevY, mPrevRawX, mPrevRawY;

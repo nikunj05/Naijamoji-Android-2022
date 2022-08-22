@@ -2,6 +2,7 @@ package com.naijamojiapp.app.cusromsharedialog;
 
 import android.content.ComponentName;
 import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
@@ -59,6 +60,7 @@ import com.naijamojiapp.app.cusromsharedialog.Models.ShareActionModel;
 import com.naijamojiapp.app.cusromsharedialog.Utils.DisplayType;
 import com.naijamojiapp.app.cusromsharedialog.Utils.Ratio;
 import com.naijamojiapp.app.cusromsharedialog.Utils.SizeType;
+import com.naijamojiapp.app.utils.Utility;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -633,17 +635,17 @@ public class ShareDialog extends DialogFragment implements ShareItemsAdapter.OnS
                 } else {
                     String bitmapPath = MediaStore.Images.Media.insertImage(getActivity().getContentResolver(), bitmap,"title", null);
                     Uri bitmapUri = Uri.parse(bitmapPath);
-                    Log.e("Print bitmapUri ","===>"+bitmapUri);
                     intent.setType("image/png");
                     intent.putExtra(Intent.EXTRA_STREAM, bitmapUri);
                 }
+                intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
                 intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 getActivity().startActivity(intent);
                 break;
         }
 
-
-    } public File readContentToFile(String localPath) throws IOException {
+    }
+    public File readContentToFile(String localPath) throws IOException {
         File readFile = new File(localPath);
 
         int length = (int) readFile.length();

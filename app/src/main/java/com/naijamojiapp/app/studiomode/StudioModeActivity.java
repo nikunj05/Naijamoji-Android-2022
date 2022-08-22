@@ -14,7 +14,6 @@ import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.text.Spannable;
 import android.text.TextUtils;
@@ -24,6 +23,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.animation.AnticipateOvershootInterpolator;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -32,6 +32,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -78,7 +79,7 @@ public class StudioModeActivity extends BaseActivity implements OnPhotoEditorLis
         View.OnClickListener,
         PropertiesBSFragment.Properties,
         EmojiBSFragment.EmojiListener,
-        StickerBSFragment.StickerListener, EditingToolsAdapter.OnItemSelected, FilterListener {
+        StickerBSFragment.StickerListener, EditingToolsAdapter.OnItemSelected, FilterListener, CompoundButton.OnCheckedChangeListener {
 
     private static final String TAG = StudioModeActivity.class.getSimpleName();
     public static final String EXTRA_IMAGE_PATHS = "extra_image_paths";
@@ -109,6 +110,8 @@ public class StudioModeActivity extends BaseActivity implements OnPhotoEditorLis
     private RelativeLayout rlBack;
 
     private ShareDialog shareDialog;
+    SwitchCompat switchCompatFontMode;
+    TextView tvFontMode;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,7 +124,7 @@ public class StudioModeActivity extends BaseActivity implements OnPhotoEditorLis
                         mImageUrl = getIntent().getExtras().getString("selected_sticker");
                         mImageId = getIntent().getExtras().getString("selected_id");
                         mCharacterlimit = getIntent().getExtras().getString("character_limit");
-                        Preferences.Companion.getINSTANCE().SavePrefValue(Preferences.Companion.getINSTANCE().getPREF_mCharacterLimit(),mCharacterlimit);
+                        Preferences.Companion.getINSTANCE().SavePrefValue(Preferences.Companion.getINSTANCE().getPREF_mCharacterLimit(),/*mCharacterlimit,*/"");
                     }
                 }
             }
@@ -204,14 +207,26 @@ public class StudioModeActivity extends BaseActivity implements OnPhotoEditorLis
 
         rlClose = findViewById(R.id.rlClose);
         rlClose.setOnClickListener(this);
+        tvFontMode = findViewById(R.id.tvFontMode);
+        switchCompatFontMode = findViewById(R.id.switch_font_mode);
+        switchCompatFontMode.setOnCheckedChangeListener(this);
+
+       if(Preferences.Companion.getINSTANCE().getGetFontMode().equals("1")){
+           switchCompatFontMode.setChecked(true);
+           tvFontMode.setText(getString(R.string.disable_black_mode));
+       }else {
+           switchCompatFontMode.setChecked(false);
+           tvFontMode.setText(getString(R.string.enable_black_mode));
+       }
     }
+
+
 
 
     //Long click on added textview
     @Override
     public void onEditTextChangeListener(final View rootView, String text, int colorCode, String typeface) {
         TextEditorDialogFragment textEditorDialogFragment = TextEditorDialogFragment.show(this, text, colorCode, typeface);
-
         textEditorDialogFragment.setOnTextEditorListener(new TextEditorDialogFragment.TextEditor() {
             @Override
             public void onDone(Spannable inputText, int colorCode, String typeface) {
@@ -489,7 +504,6 @@ public class StudioModeActivity extends BaseActivity implements OnPhotoEditorLis
                         .setClearViewsEnabled(true)
                         .setTransparencyEnabled(true)
                         .build();
-                Log.e("print file","===>"+file.getName());
                 mPhotoEditor.saveAsFile(file.getAbsolutePath(), saveSettings, new PhotoEditor.OnSaveListener() {
                     @Override
                     public void onSuccess(@NonNull String imagePath) {
@@ -675,6 +689,7 @@ public class StudioModeActivity extends BaseActivity implements OnPhotoEditorLis
             Canvas canvas = new  Canvas(newBitmap);
             canvas.drawColor(Color.WHITE);
             canvas.drawBitmap(bitmap, 0f, 0f, null);
+            newBitmap.setHasAlpha(true);
             newBitmap.compress(Bitmap.CompressFormat.PNG, 100, fOut);
             try {
                 fOut.flush();
@@ -716,8 +731,9 @@ public class StudioModeActivity extends BaseActivity implements OnPhotoEditorLis
                 FileOutputStream out = new FileOutputStream(file);
                 Bitmap newBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), bitmap.getConfig());
                 Canvas canvas = new Canvas(newBitmap);
-                canvas.drawColor(Color.WHITE);
+                canvas.drawColor(Color.TRANSPARENT);
                 canvas.drawBitmap(bitmap, 0f, 0f, null);
+                newBitmap.setHasAlpha(true);
                 newBitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
                 out.flush();
                 out.close();
@@ -767,6 +783,17 @@ public class StudioModeActivity extends BaseActivity implements OnPhotoEditorLis
             }
         } else {
             return FileUtils.getFile(this, uri);
+        }
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+        if(isChecked){
+            Preferences.Companion.getINSTANCE().SavePrefValue(Preferences.Companion.getINSTANCE().getPREF_FONT_MODE(),"1");
+            tvFontMode.setText(getString(R.string.disable_black_mode));
+        }else {
+            Preferences.Companion.getINSTANCE().SavePrefValue(Preferences.Companion.getINSTANCE().getPREF_FONT_MODE(),"0");
+            tvFontMode.setText(getString(R.string.enable_black_mode));
         }
     }
 }

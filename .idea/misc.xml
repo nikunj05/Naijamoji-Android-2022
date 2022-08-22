@@ -7,7 +7,7 @@
         <entry key="app/src/main/res/drawable/ic_text.xml" value="0.17239583333333333" />
         <entry key="app/src/main/res/layout/activity_change_avtar_style.xml" value="0.12291666666666666" />
         <entry key="app/src/main/res/layout/activity_configuration.xml" value="0.14427083333333332" />
-        <entry key="app/src/main/res/layout/activity_edit_image.xml" value="0.1621376811594203" />
+        <entry key="app/src/main/res/layout/activity_edit_image.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.1859375" />
         <entry key="app/src/main/res/layout/activity_how_to_use.xml" value="0.20199275362318841" />
         <entry key="app/src/main/res/layout/activity_instruction.xml" value="0.20199275362318841" />
@@ -37,6 +37,8 @@
         <entry key="app/src/main/res/layout/row_filter_view.xml" value="0.15625" />
         <entry key="app/src/main/res/xml/additional_subtype_settings.xml" value="0.17844202898550723" />
         <entry key="app/src/main/res/xml/fileprovider.xml" value="0.2105978260869565" />
+        <entry key="photoeditor/src/main/res/drawable/rounded_border_tv.xml" value="0.45" />
+        <entry key="photoeditor/src/main/res/layout/view_photo_editor_image.xml" value="0.335" />
       </map>
     </option>
   </component>
