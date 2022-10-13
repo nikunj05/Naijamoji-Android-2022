@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.text.Editable;
@@ -29,6 +30,7 @@ import android.widget.TextView;
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
@@ -123,7 +125,6 @@ public class TextEditorDialogFragment extends DialogFragment {
 
         mAddTextEditText = view.findViewById(R.id.add_text_edit_text);
         mAddTextEditText.setSelection(mAddTextEditText.getText().length());
-        //mAddTextEditText.setFilters(new InputFilter[] {new InputFilter.LengthFilter(mTextCount)});
 //        mAddTextEditText.setFilters(new InputFilter[]{EMOJI_FILTER});
 
         tvCount = view.findViewById(R.id.tvCount);
@@ -136,6 +137,7 @@ public class TextEditorDialogFragment extends DialogFragment {
                 mAddTextEditText.addTextChangedListener(new TextWatcher() {
                     @Override
                     public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+                    @RequiresApi(api = Build.VERSION_CODES.P)
                     @Override
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
                         try {

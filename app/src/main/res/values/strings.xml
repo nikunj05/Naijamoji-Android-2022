@@ -657,6 +657,9 @@ Tip: You can download and remove dictionaries by going to &lt;b>Languages&#160;&
     <string name="SendEmail">SEND EMAIL</string>
     <string name="reset_password">RESET MY PASSWORD</string>
 
+    <!--Reset Password-->
+    <string name="reset_passwords">Reset Password</string>
+
     <!--HomeScreen-->
     <string name="naijamoji">Naijamoji</string>
     <string name="recent">RECENT</string>

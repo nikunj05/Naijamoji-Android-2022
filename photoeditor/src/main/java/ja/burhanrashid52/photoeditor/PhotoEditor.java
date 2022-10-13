@@ -634,7 +634,7 @@ public class PhotoEditor implements BrushViewChangeListener {
      * @see OnSaveListener
      */
     @RequiresPermission(allOf = {Manifest.permission.WRITE_EXTERNAL_STORAGE})
-    public void saveAsFile(@NonNull final String imagePath, @NonNull final OnSaveListener onSaveListener) {
+    public void saveAsFile(@NonNull final String imagePath, @NonNull final OnSaveListener onSaveListener, @NonNull final String fontMode) {
         saveAsFile(imagePath, new SaveSettings.Builder().build(), onSaveListener);
     }
 
@@ -673,9 +673,8 @@ public class PhotoEditor implements BrushViewChangeListener {
                         try {
                             FileOutputStream out = new FileOutputStream(file, false);
                             if (parentView != null) {
-
                                 parentView.setDrawingCacheEnabled(true);
-                                parentView.setBackgroundColor(Color.TRANSPARENT);
+                                parentView.setBackgroundColor(Color.WHITE);
                                 Bitmap drawingCache = saveSettings.isTransparencyEnabled()
                                         ? BitmapUtil.removeTransparency(parentView.getDrawingCache())
                                         : parentView.getDrawingCache();

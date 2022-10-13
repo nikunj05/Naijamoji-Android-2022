@@ -687,7 +687,7 @@ public class StudioModeActivity extends BaseActivity implements OnPhotoEditorLis
             }
             Bitmap newBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), bitmap.getConfig());
             Canvas canvas = new  Canvas(newBitmap);
-            canvas.drawColor(Color.WHITE);
+            canvas.drawColor(Color.TRANSPARENT);
             canvas.drawBitmap(bitmap, 0f, 0f, null);
             newBitmap.setHasAlpha(true);
             newBitmap.compress(Bitmap.CompressFormat.PNG, 100, fOut);

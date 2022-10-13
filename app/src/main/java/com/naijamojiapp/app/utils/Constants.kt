@@ -69,6 +69,7 @@ class Constants {
     var str_timestamp = "timestamp"
 
 
+
     var URLLOCAL = "https://coderscotch.com/naija/public/api/"
     //var GETLOCATIONURL = "https://maps.googleapis.com/maps/api/geocode/json"
 

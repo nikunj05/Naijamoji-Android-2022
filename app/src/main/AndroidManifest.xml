@@ -3,27 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.naijamojiapp">
 
-    <!--    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-        <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
-        <uses-permission android:name="android.permission.READ_CONTACTS" />
-        <uses-permission android:name="android.permission.READ_PROFILE" />
-        <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
-        <uses-permission android:name="android.permission.READ_SYNC_STATS" />
-        <uses-permission android:name="android.permission.READ_USER_DICTIONARY" />
-        <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-        <uses-permission android:name="android.permission.USE_CREDENTIALS" />
-        <uses-permission android:name="android.permission.VIBRATE" />
-        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-        <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
-        <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
-        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-        <uses-permission android:name="android.permission.INTERNET" />
-        <uses-permission android:name="android.permission.FLAG_GRANT_READ_URI_PERMISSION" />
-        <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-        <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-        <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />-->
-
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -39,14 +18,16 @@
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FLAG_GRANT_READ_URI_PERMISSION" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
         tools:ignore="QueryAllPackagesPermission" />
 
 
@@ -159,8 +140,7 @@
             android:name=".app.activity.HomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateVisible|adjustPan"
-            />
+            android:windowSoftInputMode="stateVisible|adjustPan"/>
 
         <activity
             android:name=".app.activity.SettingActivity"
@@ -170,6 +150,22 @@
             android:name=".app.activity.ChangeAvatarStyleActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".app.activity.ResetPasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="https"
+                    android:host="coderscotch.com"
+                    android:pathPrefix="/naija/" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".app.activity.ConfigurationActivity"
@@ -326,7 +322,8 @@
             android:exported="false" />
 
         <!-- Broadcast receivers -->
-        <receiver android:name="com.naijamojiapp.ime.latin.SystemBroadcastReceiver"
+        <receiver
+            android:name="com.naijamojiapp.ime.latin.SystemBroadcastReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
@@ -344,7 +341,8 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.naijamojiapp.ime.dictionarypack.EventHandler"
+        <receiver
+            android:name="com.naijamojiapp.ime.dictionarypack.EventHandler"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
@@ -355,7 +353,8 @@
         </receiver>
 
         <!-- Broadcast receiver for AccountManager#LOGIN_ACCOUNTS_CHANGED_ACTION. -->
-        <receiver android:name="com.naijamojiapp.ime.latin.accounts.AccountsChangedReceiver"
+        <receiver
+            android:name="com.naijamojiapp.ime.latin.accounts.AccountsChangedReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.accounts.LOGIN_ACCOUNTS_CHANGED" />
