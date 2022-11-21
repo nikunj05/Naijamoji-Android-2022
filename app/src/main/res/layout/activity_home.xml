@@ -47,8 +47,8 @@
                 android:backgroundTint="@color/white"
                 android:padding="@dimen/_8sdp"
                 android:src="@drawable/search_new"
-                android:tint="@color/white"
-                android:visibility="visible" />
+                android:visibility="visible"
+                app:tint="@color/white" />
         </RelativeLayout>
 
 

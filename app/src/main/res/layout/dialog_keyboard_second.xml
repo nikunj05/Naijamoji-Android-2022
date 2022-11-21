@@ -25,10 +25,10 @@
                 android:layout_width="@dimen/_18sdp"
                 android:layout_height="@dimen/_18sdp"
                 android:layout_marginLeft="@dimen/_1sdp"
-                android:padding="@dimen/_4sdp"
                 android:backgroundTint="@color/confi_round_blue"
-                android:tint="@color/confi_round_blue"
-                android:src="@drawable/studiomode_black_new" />
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/studiomode_black_new"
+                android:tint="@color/confi_round_blue" />
         </RelativeLayout>
 
 

@@ -209,12 +209,13 @@ public class PhotoEditor implements BrushViewChangeListener {
      * @param colorCode    color to update on {@link TextView}
      */
     public void editText(@NonNull View view, @Nullable Typeface textTypeface, Spannable inputText, @NonNull int colorCode) {
+
+        Log.e("Print input text","===>"+inputText);
         final TextStyleBuilder styleBuilder = new TextStyleBuilder();
         styleBuilder.withTextColor(colorCode);
         if (textTypeface != null) {
             styleBuilder.withTextFont(textTypeface);
         }
-
         editText(view, inputText, styleBuilder);
     }
 

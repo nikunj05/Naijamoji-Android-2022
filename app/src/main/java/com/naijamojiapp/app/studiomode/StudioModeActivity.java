@@ -16,7 +16,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.Spannable;
+import android.text.SpannableString;
 import android.text.TextUtils;
+import android.text.style.ForegroundColorSpan;
 import android.transition.ChangeBounds;
 import android.util.Log;
 import android.view.View;
@@ -46,6 +48,7 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+import com.google.gson.Gson;
 import com.naijamojiapp.R;
 import com.naijamojiapp.app.cusromsharedialog.ShareDialog;
 import com.naijamojiapp.app.customview.CustomDialog;
@@ -238,6 +241,25 @@ public class StudioModeActivity extends BaseActivity implements OnPhotoEditorLis
                 mTxtCurrentTool.setText(R.string.label_text);
             }
         });
+    }
+    private Spannable fontcolor(String text) {
+        Log.e("colorCodes" + "===>", text);
+
+        int[] androidColors = getResources().getIntArray(R.array.androidcolors);
+        Spannable word = new SpannableString(text);
+        if(Preferences.Companion.getINSTANCE().getGetFontMode().equals("0")){
+            try {
+                for (int i = 0; i < word.length(); i++) {
+                    word.setSpan(new ForegroundColorSpan(androidColors[new Random().nextInt(androidColors.length)]), i, i + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    Log.e("colorCodes" + "===>", word.toString() + "===========" + i + "========" + new Gson().toJson(androidColors[new Random().nextInt(androidColors.length)]));
+                }
+                return word;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        return word;
     }
 
     @Override

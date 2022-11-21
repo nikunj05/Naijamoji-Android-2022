@@ -2,12 +2,11 @@ package com.naijamojiapp.app.studiomode;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Parcelable;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.InputType;
@@ -30,28 +29,15 @@ import android.widget.TextView;
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.naijamojiapp.R;
-import com.naijamojiapp.app.customview.CustomDialog;
 import com.naijamojiapp.app.utils.Preferences;
-import com.naijamojiapp.app.utils.Utility;
 
-import java.util.ArrayList;
 import java.util.Random;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import ja.burhanrashid52.photoeditor.PhotoEditor;
-
-import static com.facebook.FacebookSdk.getApplicationContext;
-
 
 public class TextEditorDialogFragment extends DialogFragment {
 
@@ -68,16 +54,14 @@ public class TextEditorDialogFragment extends DialogFragment {
     private ImageView ivSelectText;
     Typeface typeFace;
     private String mFontType = "";
-    //private int mTextCount = Integer.parseInt(Preferences.Companion.getINSTANCE().getCharacterLimit());
-    //    private int mTextCount = 15;
-    private Boolean ignoreChange = false;
+    private String currentTextValues = "";
+    private String currentTextFieldValues = "";
 
     public interface TextEditor {
         void onDone(Spannable inputText, int colorCode, String typeface);
+
     }
 
-
-    //Show dialog with provide text and text color
     public static TextEditorDialogFragment show(@NonNull AppCompatActivity appCompatActivity,
                                                 @NonNull String inputText,
                                                 @ColorInt int colorCode,
@@ -120,60 +104,31 @@ public class TextEditorDialogFragment extends DialogFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-//        int[] androidColors = getResources().getIntArray(R.array.androidcolors);
-//        mColorCode = androidColors[new Random().nextIcmdnt(androidColors.length)];
-
         mAddTextEditText = view.findViewById(R.id.add_text_edit_text);
-        mAddTextEditText.setSelection(mAddTextEditText.getText().length());
-//        mAddTextEditText.setFilters(new InputFilter[]{EMOJI_FILTER});
-
         tvCount = view.findViewById(R.id.tvCount);
-       // tvCount.setText("" + Integer.parseInt(Preferences.Companion.getINSTANCE().getCharacterLimit()));
-
-
-        Thread workerThread = new Thread() {
+        mAddTextEditText.addTextChangedListener(new TextWatcher() {
             @Override
-            public void run() {
-                mAddTextEditText.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
-                    @RequiresApi(api = Build.VERSION_CODES.P)
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        try {
-                            if (!ignoreChange) {
-                                ignoreChange = true;
-                                mAddTextEditText.setText(fontcolor(s.toString()), TextView.BufferType.SPANNABLE);
-                                mAddTextEditText.setSelection(mAddTextEditText.getText().length());
-
-                               /* if (s.length() > (Integer.parseInt(Preferences.Companion.getINSTANCE().getCharacterLimit()))) { }else{
-                                    Log.i("textlimit","yes11==="+s.length()+"===>"+Integer.parseInt(Preferences.Companion.getINSTANCE().getCharacterLimit()));
-                                    mAddTextEditText.setText(fontcolor(s.toString()), TextView.BufferType.SPANNABLE);
-                                    mAddTextEditText.setSelection(mAddTextEditText.getText().length());
-                                }*/
-                            }
-                           /* if (s.length() > (Integer.parseInt(Preferences.Companion.getINSTANCE().getCharacterLimit()))) {} else {
-                                Log.i("textlimit","no=="+s.length() +"===>"+Integer.parseInt(Preferences.Companion.getINSTANCE().getCharacterLimit()));
-                                mTextCount = Integer.parseInt(Preferences.Companion.getINSTANCE().getCharacterLimit()) - s.length();
-                                tvCount.setText("" + mTextCount);
-                                //Preferences.Companion.getINSTANCE().SavePrefValue(Preferences.Companion.getINSTANCE().getCharacterLimit(),String.valueOf(mTextCount));
-                            }*/
-                        }catch (Exception e){
-
-                        }
-
-                    }
-                    @Override
-                    public void afterTextChanged(final Editable s) {
-                        ignoreChange = false;
-                    }
-                });
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             }
-        };
-        workerThread.start();
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int index, int i1, int newCharLength) {
+                String newTextValues = index+"."+i1+"."+newCharLength;
+                if (!newTextValues.equals(currentTextValues) && !currentTextFieldValues.equals(charSequence.toString()) ) {
+                    currentTextValues = newTextValues;
+                    currentTextFieldValues = charSequence.toString();
+                    mAddTextEditText.setText(fontcolor(charSequence.toString()), TextView.BufferType.SPANNABLE);
+                    mAddTextEditText.setSelection(charSequence.toString().length());
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+        });
 
 
-//      setFont("");
         mInputMethodManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
         mAddTextDoneTextView = view.findViewById(R.id.add_text_done_tv);
         ivSelectText = view.findViewById(R.id.iv_select_text);
@@ -185,32 +140,6 @@ public class TextEditorDialogFragment extends DialogFragment {
         });
 
 
-        //Setup the color picker for text color
-    /*    RecyclerView addTextColorPickerRecyclerView = view.findViewById(R.id.add_text_color_picker_recycler_view);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-        addTextColorPickerRecyclerView.setLayoutManager(layoutManager);
-        addTextColorPickerRecyclerView.setHasFixedSize(true);
-
-        ColorPickerAdapter colorPickerAdapter = new ColorPickerAdapter(getActivity());
-
-        //This listener will change the text color when clicked on any color from picker
-        colorPickerAdapter.setOnColorPickerClickListener(new ColorPickerAdapter.OnColorPickerClickListener() {
-            @Override
-            public void onColorPickerClickListener(int colorCode) {
-                mColorCode = colorCode;
-                mAddTextEditText.setTextColor(colorCode);
-            }
-        });*/
-
-        //addTextColorPickerRecyclerView.setAdapter(colorPickerAdapter);
-        //mAddTextEditText.setText(getArguments().getString(EXTRA_INPUT_TEXT));
-        //mColorCode = getArguments().getInt(EXTRA_COLOR_CODE);
-
-//        Typeface type2s = Typeface.createFromAsset(getActivity().getAssets(), getArguments().getString(EXTRA_TYPEFACE));
-//        mAddTextEditText.setTypeface(type2s);
-
-        mAddTextEditText.setText(fontcolor(getArguments().getString(EXTRA_INPUT_TEXT)), TextView.BufferType.SPANNABLE);
-        mAddTextEditText.setSelection(mAddTextEditText.getText().length());
         if (getArguments().getString(EXTRA_TYPEFACE) != null && !TextUtils.isEmpty(getArguments().getString(EXTRA_TYPEFACE))) {
             Typeface type2 = Typeface.createFromAsset(getActivity().getAssets(), getArguments().getString(EXTRA_TYPEFACE));
             mFontType = getArguments().getString(EXTRA_TYPEFACE);
@@ -255,14 +184,15 @@ public class TextEditorDialogFragment extends DialogFragment {
         }
     };
 
-    private Spannable fontcolor(final String text) {
+    private Spannable fontcolor(String text) {
+
         int[] androidColors = getResources().getIntArray(R.array.androidcolors);
         Spannable word = new SpannableString(text);
         if(Preferences.Companion.getINSTANCE().getGetFontMode().equals("0")){
             try {
                 for (int i = 0; i < word.length(); i++) {
                     word.setSpan(new ForegroundColorSpan(androidColors[new Random().nextInt(androidColors.length)]), i, i + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    Log.i("colorCodes" + "===>", word.toString() + "===========" + i + "========" + new Gson().toJson(androidColors[new Random().nextInt(androidColors.length)]));
+                    Log.e("colorCodes" + "===>", word.toString() + "===========" + i + "========" + new Gson().toJson(androidColors[new Random().nextInt(androidColors.length)]));
                 }
                 return word;
             } catch (Exception e) {
@@ -360,6 +290,8 @@ public class TextEditorDialogFragment extends DialogFragment {
         mFontType = type;
         typeFace = Typeface.createFromAsset(getActivity().getAssets(), type);
         mAddTextEditText.setTypeface(typeFace);
+        //mAddTextEditText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
+
     }
 
     //Callback to listener if user is done with text editing

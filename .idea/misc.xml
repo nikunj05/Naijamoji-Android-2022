@@ -26,11 +26,15 @@
         <entry key="app/src/main/res/layout/color_picker_item_list.xml" value="0.75" />
         <entry key="app/src/main/res/layout/custom_toast.xml" value="0.1" />
         <entry key="app/src/main/res/layout/dialog_enter_mail.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/dialog_keyboard.xml" value="0.18125" />
+        <entry key="app/src/main/res/layout/dialog_keyboard_second.xml" value="0.55" />
+        <entry key="app/src/main/res/layout/dialog_select_text_style.xml" value="0.16354166666666667" />
         <entry key="app/src/main/res/layout/dialog_share.xml" value="0.15625" />
         <entry key="app/src/main/res/layout/dialog_studiomode.xml" value="0.12291666666666666" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.14427083333333332" />
         <entry key="app/src/main/res/layout/fragment_recent_popular.xml" value="0.1859375" />
         <entry key="app/src/main/res/layout/fragment_signup.xml" value="0.15625" />
+        <entry key="app/src/main/res/layout/input_view.xml" value="0.2716049382716049" />
         <entry key="app/src/main/res/layout/item_share_action.xml" value="0.15625" />
         <entry key="app/src/main/res/layout/item_share_action_horizontal.xml" value="0.15625" />
         <entry key="app/src/main/res/layout/item_share_action_single.xml" value="0.15625" />
@@ -39,10 +43,12 @@
         <entry key="app/src/main/res/layout/main_keyboard_frame.xml" value="0.15104166666666666" />
         <entry key="app/src/main/res/layout/row_editing_tools.xml" value="0.15625" />
         <entry key="app/src/main/res/layout/row_filter_view.xml" value="0.15625" />
+        <entry key="app/src/main/res/layout/sticker_view_view.xml" value="0.18125" />
         <entry key="app/src/main/res/xml/additional_subtype_settings.xml" value="0.17844202898550723" />
         <entry key="app/src/main/res/xml/fileprovider.xml" value="0.2105978260869565" />
         <entry key="photoeditor/src/main/res/drawable/rounded_border_tv.xml" value="0.45" />
         <entry key="photoeditor/src/main/res/layout/view_photo_editor_image.xml" value="0.335" />
+        <entry key="photoeditor/src/main/res/layout/view_photo_editor_text.xml" value="0.45" />
       </map>
     </option>
   </component>
