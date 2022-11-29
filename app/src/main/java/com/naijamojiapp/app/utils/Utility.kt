@@ -16,7 +16,11 @@ import android.os.Build
 import android.provider.MediaStore
 import android.text.InputFilter
 import android.text.Spanned
+import android.view.View
+import android.view.Window
+import androidx.core.content.ContextCompat
 import com.facebook.messenger.MessengerUtils
+import com.naijamojiapp.R
 import com.naijamojiapp.ime.latin.RichInputConnection
 import java.io.*
 import java.text.SimpleDateFormat
@@ -429,6 +433,11 @@ class Utility {
         return false
     }
 
-
+fun setTopBar(context: Context,window : Window)  {
+    window.decorView.systemUiVisibility =
+        View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+    window.statusBarColor = ContextCompat.getColor(context, R.color.status_bar_color)
+    window.navigationBarColor = ContextCompat.getColor(context, R.color.status_bar_color)
+}
 
 }

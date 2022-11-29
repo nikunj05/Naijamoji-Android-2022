@@ -102,6 +102,7 @@
     <color name="black">#000000</color>
     <color name="bb_inActiveBottomBarItemColor">#90979797</color>
     <color name="gray_transperant">#20979797</color>
+    <color name="status_bar_color">#64DF91</color>
 
 
     <!--StudioMode-->

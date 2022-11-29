@@ -63,6 +63,7 @@ import com.naijamojiapp.app.utils.CheckConnection;
 import com.naijamojiapp.app.utils.Constants;
 import com.naijamojiapp.app.utils.FileUtils;
 import com.naijamojiapp.app.utils.Preferences;
+import com.naijamojiapp.app.utils.Utility;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -118,7 +119,7 @@ public class StudioModeActivity extends BaseActivity implements OnPhotoEditorLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        makeFullScreen();
+        makeFullScreen(this);
         setContentView(R.layout.activity_edit_image);
         if (getIntent() != null) {
             if (getIntent().getExtras() != null) {

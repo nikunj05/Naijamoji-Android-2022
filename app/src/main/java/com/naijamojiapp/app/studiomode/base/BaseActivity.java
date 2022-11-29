@@ -1,10 +1,12 @@
 package com.naijamojiapp.app.studiomode.base;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -13,6 +15,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.naijamojiapp.R;
+import com.naijamojiapp.app.utils.Utility;
 
 
 public class BaseActivity extends AppCompatActivity {
@@ -34,9 +38,17 @@ public class BaseActivity extends AppCompatActivity {
 
     public void isPermissionGranted(boolean isGranted, String permission) {}
 
-    public void makeFullScreen() {
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    public void makeFullScreen(Context context) {
+      /*  window.decorView.systemUiVisibility =
+                View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+        window.statusBarColor = ContextCompat.getColor(context, R.color.status_bar_color)
+        window.navigationBarColor = ContextCompat.getColor(context, R.color.status_bar_color)*/
+
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
+        getWindow().setStatusBarColor(context.getResources().getColor(R.color.status_bar_color));
+        getWindow().setNavigationBarColor(context.getResources().getColor(R.color.status_bar_color));
+       /* requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);*/
     }
 
     @Override

@@ -35,8 +35,7 @@ class ResetPasswordActivity : AppCompatActivity(), View.OnClickListener {
     var strEmail : String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requestWindowFeature(Window.FEATURE_NO_TITLE)
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        Utility.instance!!.setTopBar(this,window)
         setContentView(R.layout.activity_reset_password)
         if (intent != null) {
             if (intent.extras != null) {

@@ -16,6 +16,7 @@ import com.google.android.material.tabs.TabLayout
 import com.naijamojiapp.app.fragment.LoginFragment
 import com.naijamojiapp.app.fragment.SignUpFragment
 import com.naijamojiapp.R
+import com.naijamojiapp.app.utils.Utility
 
 class LoginAndRegistrationActivity : AppCompatActivity() {
     private var allTabs: TabLayout? = null
@@ -26,8 +27,7 @@ class LoginAndRegistrationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requestWindowFeature(Window.FEATURE_NO_TITLE)
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        Utility.instance!!.setTopBar(this,window)
         setContentView(R.layout.activity_login_and_signup)
         setUpViews()
     }
