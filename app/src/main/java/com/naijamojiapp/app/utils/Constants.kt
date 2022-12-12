@@ -70,7 +70,9 @@ class Constants {
 
 
 
-    var URLLOCAL = "https://coderscotch.com/naija/public/api/"
+   // var URLLOCAL = "https://coderscotch.com/naija/public/api/"
+    var URLLOCAL = "https://naijadev.coderscotch.com/api/"
+
     //var GETLOCATIONURL = "https://maps.googleapis.com/maps/api/geocode/json"
 
     //Web services
