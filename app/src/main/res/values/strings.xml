@@ -582,11 +582,11 @@ Tip: You can download and remove dictionaries by going to &lt;b>Languages&#160;&
 
     <!--Application-->
     <!-- facebook-->
-    <string name="facebook_app_id">1292171674314866</string>
+    <string name="facebook_app_id">571972317344386</string>
     <string name="fb_login_protocol_scheme">fb1292171674314866</string>
    <!-- <string name="facebook_app_id" translatable="false">1292171674314866</string>-->
     <!--<string name="googleapi" translatable="false">AIzaSyC9568-eilau33kL0mMrken8ZsjXfoBo6s</string>-->
-    <string name="googleapi" translatable="false">AIzaSyASnuFGFhoZBdNI1MoZzBlh16g8PaYUGVk</string>
+    <string name="googleapi" translatable="false">AIzaSyD_Nr8UQazzgYsdKEzruBTpywjl-NCa_ZE</string>
 
     <string name="error_message500">The data could not be read because it is not in the correct format</string>
     <string name="permission_location">In order for you to benefit fully from some app features we need access to your location. You have complete control over your visibility</string>
@@ -778,4 +778,5 @@ Tip: You can download and remove dictionaries by going to &lt;b>Languages&#160;&
     <string name="studiomode_warning">You can\'t able to add text in this sticker.</string>
     <string name="enable_black_mode" tools:ignore="ExtraTranslation">Switch to black text</string>
     <string name="disable_black_mode" tools:ignore="ExtraTranslation">Switch to colorful text</string>
+    <string name="asset_statements" translatable="false">[{ \"include\": \"https://naijadev.coderscotch.com/.well-known/assetlinks.json\" }]</string>
 </resources>

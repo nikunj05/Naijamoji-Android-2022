@@ -1,142 +1,42 @@
 {
   "project_info": {
-    "project_number": "336761783854",
-    "firebase_url": "https://naijamoji-ed429.firebaseio.com",
-    "project_id": "naijamoji-ed429",
-    "storage_bucket": "naijamoji-ed429.appspot.com"
+    "project_number": "108339522445",
+    "project_id": "naijamoji-dev",
+    "storage_bucket": "naijamoji-dev.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:336761783854:android:5fcabb5cf62895faff01bf",
+        "mobilesdk_app_id": "1:108339522445:android:5a071c88934de424042bc4",
         "android_client_info": {
           "package_name": "com.naijamojiapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "336761783854-1kj7irb1nj9f9n9vsgh0p2f7c6677b0v.apps.googleusercontent.com",
+          "client_id": "108339522445-4pncr4mpa3qbpjn12hphg8c0d1r18kio.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.naijamojiapp",
-            "certificate_hash": "ab2791fc068d9fa9db7e573d5b60b4a5aed99ad4"
+            "certificate_hash": "7462da0747f07a29b598efa553cd44e673674f3f"
           }
         },
         {
-          "client_id": "336761783854-4s349r5u8lo3disjjppjiv9p34mln5nm.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.naijamojiapp",
-            "certificate_hash": "c478add6903762fd2c5298b6ef8ddfbbe88aee5c"
-          }
-        },
-        {
-          "client_id": "336761783854-jkln9lvfhkds784f07a1smesrtbgltve.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.naijamojiapp",
-            "certificate_hash": "d349d3dcd6c312c8b01cafb343f5af230ca0a74b"
-          }
-        },
-        {
-          "client_id": "336761783854-one94r1u4carltm3i8pukb46p1rfn4he.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.naijamojiapp",
-            "certificate_hash": "575ce1c9b538e7c8278787059135206f90fe7a7a"
-          }
-        },
-        {
-          "client_id": "336761783854-tlme0lrkf9u5p2hl87h4a8inb763gje6.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.naijamojiapp",
-            "certificate_hash": "203f560eef536d06914cddc8443abd56c5af2092"
-          }
-        },
-        {
-          "client_id": "336761783854-uveav0nkficqlmkldjtks9rh5hpo0ksm.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.naijamojiapp",
-            "certificate_hash": "ff3786b5131613feb9ed17721c2725561fae20c3"
-          }
-        },
-        {
-          "client_id": "336761783854-d23au4en08i834srrdkonk3ku58ihoo9.apps.googleusercontent.com",
+          "client_id": "108339522445-asp18gf1o1v08gh8qa0pljbt6cjrhh8s.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAv_RHEhUc8gkw0NCxJn-pajxq3_8gPH54"
+          "current_key": "AIzaSyD_Nr8UQazzgYsdKEzruBTpywjl-NCa_ZE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "336761783854-d23au4en08i834srrdkonk3ku58ihoo9.apps.googleusercontent.com",
+              "client_id": "108339522445-asp18gf1o1v08gh8qa0pljbt6cjrhh8s.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "336761783854-9s41tveg6oel7nk4ini7gl7rno5s03lo.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.coders.NaijaMoji"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:336761783854:android:d20179501fadeec6ff01bf",
-        "android_client_info": {
-          "package_name": "com.naijamojiappusa"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "336761783854-22te70m6on6gdd4v4t7btbr55s0gdcq1.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.naijamojiappusa",
-            "certificate_hash": "203f560eef536d06914cddc8443abd56c5af2092"
-          }
-        },
-        {
-          "client_id": "336761783854-o5a0829cvu6tm8m80q3r45gjdqu252av.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.naijamojiappusa",
-            "certificate_hash": "c0b408de5d70dae1a58260f784efe89aa701b644"
-          }
-        },
-        {
-          "client_id": "336761783854-d23au4en08i834srrdkonk3ku58ihoo9.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAv_RHEhUc8gkw0NCxJn-pajxq3_8gPH54"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "336761783854-d23au4en08i834srrdkonk3ku58ihoo9.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "336761783854-9s41tveg6oel7nk4ini7gl7rno5s03lo.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.coders.NaijaMoji"
-              }
             }
           ]
         }

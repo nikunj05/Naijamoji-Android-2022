@@ -55,6 +55,9 @@
         android:usesCleartextTraffic="true">
 
         <!-- Services -->
+        <meta-data
+            android:name="asset_statements"
+            android:resource="@string/asset_statements" />
         <service
             android:name="com.naijamojiapp.ime.latin.LatinIME"
             android:label="@string/english_ime_name"
@@ -115,6 +118,28 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+         <!--   <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="example"
+                    android:host="gizmos" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http"
+                    android:host="www.example.com"
+                    android:pathPrefix="/gizmos" />
+            </intent-filter>-->
+
+
+
         </activity>
 
         <activity
@@ -141,7 +166,7 @@
             android:name=".app.activity.HomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateVisible|adjustPan"/>
+            android:windowSoftInputMode="stateVisible|adjustPan" />
 
         <activity
             android:name=".app.activity.SettingActivity"
@@ -156,15 +181,35 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:exported="true">
-            <intent-filter android:autoVerify="true">
+          <!--  <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
                     android:scheme="https"
-                    android:host="coderscotch.com"
-                    android:pathPrefix="/naija/" />
+                    android:host="naijadev.coderscotch.com" />
+            </intent-filter>-->
+           <!-- <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+               &lt;!&ndash; <data android:scheme="studio" android:host="exitt" />&ndash;&gt;
+                <data
+                    android:scheme="https"
+                    android:host="naijadev.coderscotch.com"
+                    android:pathPrefix="/forgot-password" />
+            </intent-filter>-->
+            <intent-filter
+                tools:node="merge"
+                android:autoVerify="true"
+                >
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:host="naijadev.coderscotch.com"  />
+                <data android:scheme="https" />
+
             </intent-filter>
         </activity>
 

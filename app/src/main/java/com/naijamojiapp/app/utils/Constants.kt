@@ -1,12 +1,11 @@
 package com.naijamojiapp.app.utils
 
-import android.os.Build
-import android.os.Bundle
+
 
 import java.util.Arrays
 
 class Constants {
-
+    val PREFIX = "https://naijamojiapp.page.link"
     companion object {
         val INSTANCE: Constants = Constants()
         const val RECENT_CONTENT_REPORT_IMAGE = 15
@@ -68,6 +67,7 @@ class Constants {
     var str_skintone = "skin_tone"
     var str_timestamp = "timestamp"
 
+    var str_token = "token"
 
 
    // var URLLOCAL = "https://coderscotch.com/naija/public/api/"
@@ -102,5 +102,7 @@ class Constants {
     var strWS_delete_custom_user_emoji = "delete-custom-user-emoji"
     var strWS_check_email_exist = "check-email-exist"
     var strWS_random_emoji = "random-emoji"
+    var strWS_reset_password= "reset-password"
+
 
 }
