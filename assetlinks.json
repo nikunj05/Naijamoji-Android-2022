@@ -1,0 +1,25 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.naijamojiapp",
+    "sha256_cert_fingerprints":
+    ["1A:DE:B7:CC:D8:68:26:DA:D0:B9:D9:3B:BD:CC:BD:19:38:3F:61:95:AA:78:DD:16:72:80:99:9D:84:EC:1F:A5"]
+  }
+},
+{
+  "relation": ["delegate_permission/common.get_login_creds"],
+  "target": {
+    "namespace": "web",
+    "site": "https://naijadev.coderscotch.com"
+  }
+},
+{
+  "relation": ["delegate_permission/common.get_login_creds"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.naijamojiapp",
+    "sha256_cert_fingerprints":
+    ["1A:DE:B7:CC:D8:68:26:DA:D0:B9:D9:3B:BD:CC:BD:19:38:3F:61:95:AA:78:DD:16:72:80:99:9D:84:EC:1F:A5"]
+  }
+}]

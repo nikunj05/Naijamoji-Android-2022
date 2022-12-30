@@ -1,0 +1,3 @@
+/Users/sanjay/Projects/Naijamoji-Android/app/.cxx/RelWithDebInfo/1545p6a1/x86_64/CMakeFiles/rebuild_cache.dir
+/Users/sanjay/Projects/Naijamoji-Android/app/.cxx/RelWithDebInfo/1545p6a1/x86_64/CMakeFiles/edit_cache.dir
+/Users/sanjay/Projects/Naijamoji-Android/app/.cxx/RelWithDebInfo/1545p6a1/x86_64/CMakeFiles/jni_latinime.dir

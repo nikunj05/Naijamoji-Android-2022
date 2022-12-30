@@ -1,0 +1,40 @@
+{
+  "stringTable": {},
+  "buildFiles": [
+    "/Users/sanjay/Projects/Naijamoji-Android/app/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/sanjay/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+      "-C",
+      "/Users/sanjay/Projects/Naijamoji-Android/app/.cxx/Debug/4g485t4c/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/sanjay/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+    "-C",
+    "/Users/sanjay/Projects/Naijamoji-Android/app/.cxx/Debug/4g485t4c/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "jni_latinime-Debug-x86_64": {
+      "buildCommandComponents": [
+        "/Users/sanjay/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/sanjay/Projects/Naijamoji-Android/app/.cxx/Debug/4g485t4c/x86_64",
+        "jni_latinime"
+      ],
+      "buildType": "debug",
+      "abi": "x86_64",
+      "artifactName": "jni_latinime",
+      "output": "/Users/sanjay/Projects/Naijamoji-Android/app/build/intermediates/cxx/Debug/4g485t4c/obj/x86_64/libjni_latinime.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {},
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

@@ -1,0 +1,7 @@
+Executable : /Users/sanjay/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja
+arguments : 
+-C
+/Users/sanjay/Projects/Naijamoji-Android/app/.cxx/RelWithDebInfo/1545p6a1/x86_64
+jni_latinime
+jvmArgs : 
+
