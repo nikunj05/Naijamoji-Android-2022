@@ -582,8 +582,11 @@ Tip: You can download and remove dictionaries by going to &lt;b>Languages&#160;&
 
     <!--Application-->
     <!-- facebook-->
-    <string name="facebook_app_id">571972317344386</string>
-    <string name="fb_login_protocol_scheme">fb1292171674314866</string>
+    <!--<string name="facebook_app_id">571972317344386</string>
+    <string name="fb_login_protocol_scheme">fb571972317344386</string>-->
+    <string name="facebook_app_id">186377690957361</string>
+    <string name="fb_login_protocol_scheme">fb186377690957361</string>
+    <string name="facebook_client_token">4cedd187fe0197e7e58a88f869743b25</string>
    <!-- <string name="facebook_app_id" translatable="false">1292171674314866</string>-->
     <!--<string name="googleapi" translatable="false">AIzaSyC9568-eilau33kL0mMrken8ZsjXfoBo6s</string>-->
     <string name="googleapi" translatable="false">AIzaSyD_Nr8UQazzgYsdKEzruBTpywjl-NCa_ZE</string>

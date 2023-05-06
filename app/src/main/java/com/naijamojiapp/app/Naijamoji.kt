@@ -2,10 +2,13 @@ package com.naijamojiapp.app
 
 import android.content.Context
 import android.os.StrictMode
+import android.util.Log
 import androidx.multidex.BuildConfig
 import androidx.multidex.MultiDexApplication
 import com.androidnetworking.AndroidNetworking
-import com.facebook.stetho.Stetho
+import com.facebook.FacebookSdk
+import com.facebook.appevents.AppEventsLogger
+//import com.facebook.stetho.Stetho
 import com.google.firebase.FirebaseApp
 import com.naijamojiapp.app.roomDB.catchImage.ImagesCache
 import com.naijamojiapp.app.webservice.WebService
@@ -29,8 +32,11 @@ class Naijamoji : MultiDexApplication() {
         mContext = this
         val cache = ImagesCache.getInstance() //Singleton instance handled in ImagesCache class.
         cache.initializeCache()
+        Log.d("Print facebook sdk version",FacebookSdk.getSdkVersion());
+        FacebookSdk.sdkInitialize(mContext as Naijamoji);
+        AppEventsLogger.activateApp(this)
         if (BuildConfig.DEBUG) {
-            Stetho.initializeWithDefaults(this)
+           // Stetho.initializeWithDefaults(this)
         }
         FirebaseApp.initializeApp(this)
 //        AndroidNetworking.enableLogging(HttpLoggingInterceptor.Level.BODY)
